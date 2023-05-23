@@ -11,6 +11,19 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final bool isTyping = true;
+  late TextEditingController textEditingController;
+  @override
+  void initState() {
+    textEditingController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
