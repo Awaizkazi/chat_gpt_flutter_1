@@ -1,3 +1,4 @@
+import 'package:chat_gpt_flutter_1/constants/constants.dart';
 import 'package:chat_gpt_flutter_1/services/assets_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -51,24 +52,38 @@ class _ChatScreenState extends State<ChatScreen> {
                 color: Colors.white,
                 size: 18,
               ),
+              SizedBox(height: 15),
               //! For the textField Where the user asking the messages
-              Row(
-                children: [
-                  Expanded(
-                    child: TextField(
-                      controller: textEditingController,
-                      onSubmitted: (value) {
-                        //TODO  Send Message or Asking our Queries
-                      },
-                      decoration: InputDecoration.collapsed(
-                        hintText: 'Send a Message.',
-                        hintStyle: TextStyle(
-                          color: Colors.grey,
+              Material(
+                color: cardColor,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: TextField(
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                          controller: textEditingController,
+                          onSubmitted: (value) {
+                            //TODO  Send Message or Asking our Queries
+                          },
+                          decoration: InputDecoration.collapsed(
+                            hintText: 'Send a Message.',
+                            hintStyle: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.send, color: Colors.white),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ],
           ],
