@@ -9,6 +9,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final bool isTyping = true; 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,8 +21,16 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         title: Text('ChatGPT'),
       ),
-      body: Center(
-        child: Image.asset(AssetsManager.openaiLogo),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Flexible(
+              child: ListView.builder(itemBuilder: (context, index) {
+                return Text('Hello this is a text');
+              }),
+            ),
+          ],
+        ),
       ),
     );
   }
