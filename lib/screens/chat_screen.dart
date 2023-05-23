@@ -26,15 +26,25 @@ class _ChatScreenState extends State<ChatScreen> {
         child: Column(
           children: [
             Flexible(
-              child: ListView.builder(itemBuilder: (context, index) {
-                return Text('Hello this is a text');
-              }),
+              child: ListView.builder(
+                  itemCount: 6,
+                  itemBuilder: (context, index) {
+                    return Text('Hello this is a text');
+                  }),
             ),
             // TODO This condiiton for the Three Dot Showing that the response will be getting by the ChatGPT
             if (isTyping) ...[
               SpinKitThreeBounce(
                 color: Colors.white,
                 size: 18,
+              ),
+              //! For the textField Where the user asking the messages
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(),
+                  ),
+                ],
               ),
             ],
           ],
