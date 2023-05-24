@@ -19,7 +19,12 @@ class ChatWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Image.asset(AssetsManager.userImage, width: 30, height: 30),
+                Image.asset(
+                    chatIndex == 0
+                        ? AssetsManager.userImage
+                        : AssetsManager.botImage,
+                    width: 30,
+                    height: 30),
                 SizedBox(width: 8),
                 TextWidget(label: 'Hello here is a msg'),
               ],

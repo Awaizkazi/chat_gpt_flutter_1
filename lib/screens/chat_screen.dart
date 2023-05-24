@@ -53,8 +53,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     return ChatWidget(
                       msg: chatMessages[index]['msg'].toString(),
                       chatIndex: int.parse(
-                        chatMessages[index]['chatIndex'].toString(),
-                      ),
+                          chatMessages[index]['chatIndex'].toString()),
                     );
                   }),
             ),
