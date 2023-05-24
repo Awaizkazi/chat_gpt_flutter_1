@@ -1,5 +1,6 @@
 import 'package:chat_gpt_flutter_1/constants/constants.dart';
 import 'package:chat_gpt_flutter_1/services/assets_manager.dart';
+import 'package:chat_gpt_flutter_1/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -49,7 +50,7 @@ class _ChatScreenState extends State<ChatScreen> {
               child: ListView.builder(
                   itemCount: 6,
                   itemBuilder: (context, index) {
-                    return Text('Hello this is a text');
+                    return ChatWidget();
                   }),
             ),
             // TODO This condiiton for the Three Dot Showing that the response will be getting by the ChatGPT
