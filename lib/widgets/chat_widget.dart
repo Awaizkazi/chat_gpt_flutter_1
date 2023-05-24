@@ -36,23 +36,11 @@ class ChatWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.thumb_up_alt_outlined,
-                              color: Colors.white,
-                            ),
-                            tooltip: 'Like',
-                          ),
-                          // SizedBox(width: 5),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.thumb_down_alt_outlined,
-                              color: Colors.white,
-                            ),
-                            tooltip: 'Dislike',
-                          ),
+                          Icon(Icons.thumb_up_alt_outlined,
+                              color: Colors.white),
+                          SizedBox(width: 6),
+                          Icon(Icons.thumb_down_alt_outlined,
+                              color: Colors.white),
                         ],
                       ),
               ],
