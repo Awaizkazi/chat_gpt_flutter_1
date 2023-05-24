@@ -1,6 +1,7 @@
 import 'package:chat_gpt_flutter_1/constants/constants.dart';
 import 'package:chat_gpt_flutter_1/services/assets_manager.dart';
 import 'package:chat_gpt_flutter_1/widgets/chat_widget.dart';
+import 'package:chat_gpt_flutter_1/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -38,7 +39,31 @@ class _ChatScreenState extends State<ChatScreen> {
         title: Text('ChatGPT'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              showModalBottomSheet(
+                  backgroundColor: scaffoldBackgroundColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(20),
+                    ),
+                  ),
+                  context: context,
+                  builder: (context) {
+                    return Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Row(
+                        children: [
+                          Flexible(
+                            child: TextWidget(
+                              label: 'Chosen Model:',
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  });
+            },
             icon: Icon(Icons.more_vert_rounded, color: Colors.white),
           ),
         ],
