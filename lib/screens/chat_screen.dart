@@ -35,6 +35,12 @@ class _ChatScreenState extends State<ChatScreen> {
           child: Image.asset(AssetsManager.openaiLogo),
         ),
         title: Text('ChatGPT'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.more_vert_rounded, color: Colors.white),
+          ),
+        ],
       ),
       body: SafeArea(
         child: Column(
