@@ -10,7 +10,7 @@ class ChatWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Image.asset(AssetsManager.imagePath),
+            Image.asset(AssetsManager.botImage),
           ],
         )
       ],
