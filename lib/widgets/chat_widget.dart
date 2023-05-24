@@ -2,8 +2,12 @@ import 'package:chat_gpt_flutter_1/constants/constants.dart';
 import 'package:chat_gpt_flutter_1/services/assets_manager.dart';
 import 'package:flutter/material.dart';
 
+import 'text_widget.dart';
+
 class ChatWidget extends StatelessWidget {
-  const ChatWidget({super.key});
+  const ChatWidget({super.key, required this.msg, required this.chatIndex});
+  final String msg;
+  final int chatIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +20,8 @@ class ChatWidget extends StatelessWidget {
             child: Row(
               children: [
                 Image.asset(AssetsManager.userImage, width: 30, height: 30),
-                Text('Here is a msg')
+                SizedBox(width: 8),
+                TextWidget(label: 'Hello here is a msg'),
               ],
             ),
           ),
