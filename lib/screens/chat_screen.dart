@@ -73,15 +73,13 @@ class _ChatScreenState extends State<ChatScreen> {
                     children: [
                       Expanded(
                         child: TextField(
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                          style: TextStyle(color: Colors.white, fontSize: 18),
                           controller: textEditingController,
                           onSubmitted: (value) {
                             //TODO  Send Message or Asking our Queries
                           },
                           decoration: InputDecoration.collapsed(
-                            hintText: 'Send a Message.',
+                            hintText: 'Send a Message...',
                             hintStyle: TextStyle(
                               color: Colors.grey,
                             ),

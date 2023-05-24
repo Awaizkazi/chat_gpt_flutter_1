@@ -18,6 +18,7 @@ class ChatWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
                     chatIndex == 0
@@ -26,7 +27,34 @@ class ChatWidget extends StatelessWidget {
                     width: 30,
                     height: 30),
                 SizedBox(width: 8),
-                TextWidget(label: 'Hello here is a msg'),
+                Expanded(
+                  child: TextWidget(label: msg),
+                ),
+                chatIndex == 0
+                    ? SizedBox.shrink()
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.thumb_up_alt_outlined,
+                              color: Colors.white,
+                            ),
+                            tooltip: 'Like',
+                          ),
+                          // SizedBox(width: 5),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.thumb_down_alt_outlined,
+                              color: Colors.white,
+                            ),
+                            tooltip: 'Dislike',
+                          ),
+                        ],
+                      ),
               ],
             ),
           ),
